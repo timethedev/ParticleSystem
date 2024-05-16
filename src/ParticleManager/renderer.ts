@@ -53,9 +53,9 @@ export class Particle {
 
 		// Position
 		const startPosition: Vec2 = this.data.pos;
-		const startRotation: number = deg2rad(this.data.startRotation);
+		const startRotation: number = deg2rad(this.data.startRotation - 180);
 
-		const directionVector: Vec2 = vec2(Math.sin(startRotation), Math.cos(startRotation));
+		const directionVector: Vec2 = vec2(Math.cos(startRotation), Math.sin(startRotation));
 		const speed = averageFromPercentage(playedAnimPercentage, this.data.speed.start, this.data.speed.end) / 100;
 		const velocity: Vec2 = directionVector.scale(speed * dt() * 100).add(this.data.acceleration.scale(dt() * 100));
 

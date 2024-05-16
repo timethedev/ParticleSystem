@@ -25,8 +25,8 @@ const ParticleEffect: ParticleEffectData = {
 	},
 	"maxSpeed": 0,
 	"startRotation": {
-		"min": 0,
-		"max": 15
+		"min": -7.5,
+		"max": 7.5
 	},
 	"noRotation": false,
 	"rotationSpeed": {

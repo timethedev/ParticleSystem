@@ -20,7 +20,7 @@ kaboom({ // Client Start
 
 const WaterSplashEffect = new ParticleEffect(WaterSplashEffectData, {
 	position: center(),
-	angle: 90
+	angle: 0
 })
 
 onClick(() =>{
@@ -28,7 +28,6 @@ onClick(() =>{
 })
 
 onDraw(() =>{
-	WaterSplashEffect.emitterData.position = mousePos()
-	WaterSplashEffect.emitterData.angle += dt() * 100
+	WaterSplashEffect.emitterData.angle = WaterSplashEffect.emitterData.position.angle(toWorld(mousePos()))
 	WaterSplashEffect.render()
 })
